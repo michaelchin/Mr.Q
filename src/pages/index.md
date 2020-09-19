@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Mr.Q
-image: /img/Starry-Night-Van-Gogh-Which-Stars-GoogleArtProject-1024x545.jpg
+image: ../img/Starry-Night-Van-Gogh-Which-Stars-GoogleArtProject-1024x545.jpg
 heading: Mr.Q
 subheading: 三教合一修仙者也， 也是网络乞丐, 一个用visual studio code和手机写小说的全能程序员和无实践经验的政治家
 mainpitch:
@@ -11,34 +11,17 @@ mainpitch:
 description: An author
 descMarkdown: "./desc.md"
 intro:
-  blurbs:
-    - image: /img/coffee.png
-      text: >
-        We sell green and roasted coffee beans that are sourced directly from
-        independent farmers and farm cooperatives. We’re proud to offer a
-        variety of coffee beans grown with great care for the environment and
-        local communities. Check our post or contact us directly for current
-        availability.
-    - image: /img/coffee-gear.png
-      text: >
-        We offer a small, but carefully curated selection of brewing gear and
-        tools for every taste and experience level. No matter if you roast your
-        own beans or just bought your first french press, you’ll find a gadget
-        to fall in love with in our shop.
-    - image: /img/tutorials.png
-      text: >
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. You can schedule a custom 1-on-1 consultation with our baristas
-        to learn anything you want to know about coffee roasting and brewing.
-        Email us or call the store for details.
-    - image: /img/meeting-space.png
-      text: >
-        We believe that good coffee has the power to bring people together.
-        That’s why we decided to turn a corner of our shop into a cozy meeting
-        space where you can hang out with fellow coffee lovers and learn about
-        coffee making techniques. All of the artwork on display there is for
-        sale. The full price you pay goes to the artist.
+  reasons:
+    - reason: 
+      text: 这货法相庄严
+    - reason: 
+      text: Q生可以不用出去赚钱，专心待在家里思考如何拯救天下苍生
+    - reason: 
+      text: Q生如果有一天霞举飞升羽化登仙，你会很有成就感
+    - reason: 
+      text: Q生驾着七色彩云出来拯救天下苍生的时候，你可以指着他对你身边的漂亮姑娘吹牛，就说你是Q生幕后金主之一，没毛病！
+    - reason: 
+      text: 给精神病人出钱治病，免得出来为害社会是功德
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their

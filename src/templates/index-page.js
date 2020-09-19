@@ -8,7 +8,7 @@ import Layout from '../components/Layout'
 import LatestNews from '../components/LatestNews'
 import Content, { HTMLContent } from '../components/Content'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faClipboard, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faDownload, faClipboard, faCheckCircle ,faStar} from '@fortawesome/free-solid-svg-icons'
 
 import GPlatesMainScreenshot from '../img/SATL_ExponentialStretching_650x380.png'
 import QRCodeImg from '../img/mm_facetoface_collect_qrcode_1600503554936.png'
@@ -70,7 +70,11 @@ export const IndexPageTemplate = ({
               }}
             >
               <span style={{fontSize:'150%'}}>
-                玄门Q生梦
+                <span style={{color:'white'}}>玄</span>
+                <span style={{color:'white'}}>门</span>
+                <span style={{color:'red'}}>Q</span>
+                <span style={{color:'white'}}>生</span>
+                <span style={{color:'white'}}>梦</span>
               </span>
             </h1>
             <h3
@@ -85,8 +89,20 @@ export const IndexPageTemplate = ({
                 fontFamily: 'Open Sans Bold, sans-serif'
               }}
             >
-              {subheading}
+              <p style={{color:'black', fontSize:'120%', fontWeight:'bold', fontStyle: 'italic', marginBottom:'2rem'}}>  
+                一个整天装可怜的网络<span style={{ fontSize:'140%', color:'yellow'}}>乞丐</span>
+              </p>
+              <p> 三教合一的<span style={{ color:'purple'}}>修仙者</span></p> 
+              <p>用<a href="https://code.visualstudio.com/" target="_blank" style={{color:'blue', textDecoration: 'underline'}}>Visual Studio Code</a>和手机写小说的全能
+              <span style={{ color:'cyan'}}>程序员</span></p>
+              <p>豪无实践经验的<span style={{ color:'orange'}}>政治家</span></p>
+
+              <p style={{ color:'black', marginTop:'3rem', fontSize:'80%', fontStyle: 'italic'}}>
+              请各位大爷施舍则个！！！十亿八亿不嫌多，一分两分不嫌少，咱要饭不嫌饭馊。
+              另外还可以兼职国家元首，请神送仙，占卜算命，武王伐纣，一统中华之类的杂活儿。
+              </p>
             </h3>
+            
           </div>
           <div className="column is-4" style={{  zIndex: '10', }}>
             <img
@@ -99,30 +115,14 @@ export const IndexPageTemplate = ({
       </div>
     </div>
 
-    <h1 className="mc-title title">{mainpitch.title}</h1>
+    <h1 className="mc-title title">为啥要布施给Q生？</h1>
 
     {/*start of the first section*/}
     <div className="container-fliud box" style={{backgroundColor: 'whitesmoke'}}>
       <div className="container">      
         <div className="column is-12">
          
-            <div className="columns section">
-              <div className="column is-8">
-                {/*<div className="tile">
-                  <h1 className="mc-title title">{mainpitch.title}</h1>
-            </div>*/}
-                <div className="tile">
-                  <div className="content" style={{fontSize: 'large'}}>
-                      <HTMLContent content={descMarkdown.childMarkdownRemark.html}/>
-                  </div>
-                </div>
-                <br></br>
-                <div style={{textAlign:'center'}} >
-                  <a className="button is-link is-small" href="/features" >
-                    Learn More
-                  </a>
-                </div>
-              </div>
+            <div className="columns section"> 
               <div className="column is-4" >  
                 <div style={{position: 'relative', paddingBottom: '75%'}}>
                   <iframe style={{
@@ -131,6 +131,24 @@ export const IndexPageTemplate = ({
                     width="100%" height="100%" src="https://www.youtube.com/embed/KkYOTa-6MBU?autoplay=1&;mute=1&;loop=1&;rel=0&;showinfo=0&color=white&iv_load_policy=3&playlist=KkYOTa-6MBU" frameborder="0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
+                </div>
+              </div>
+              <div className="column is-8">
+                <div style={{marginLeft:'3rem', fontSize:'140%'}}>
+                  {intro.reasons.map((reason) => (
+                    <p>
+                      <span className="icon" style={{verticalAlign: 'middle', color: 'green'}}> 
+                        <FontAwesomeIcon icon={faCheckCircle} className="svg-inline--fa fa-check-circle fa-w-16 fa-7x"/>
+                      </span>
+                      <span style={{verticalAlign: 'middle', marginLeft: '1rem'}}>{reason.text}</span>
+                    </p>
+                  ))}
+                  <div style={{textAlign:'center', marginTop:'3rem'}}>
+                    <button className="button is-small is-success">
+                      <span className="icon"> <FontAwesomeIcon icon={faClipboard} className="fa-spin" /></span>
+                      <span>查看更多</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -377,7 +395,7 @@ IndexPageTemplate.propTypes = {
   description: PropTypes.string,
   descMarkdown: PropTypes.object,
   intro: PropTypes.shape({
-    blurbs: PropTypes.array,
+    reasons: PropTypes.array,
   }),
 }
 
@@ -435,14 +453,7 @@ export const pageQuery = graphql`
           }
         }
         intro {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+          reasons {
             text
           }
           heading
