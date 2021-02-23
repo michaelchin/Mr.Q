@@ -39,7 +39,8 @@ export const IndexPageTemplate = ({
         backgroundPosition: `left top`,
         backgroundAttachment: 'fixed',
         textAlign: `center`,
-        minHeight: `700px`,
+        //minHeight: `700px`,
+        height: '100vh',
         position: 'relative'
       }}
     >
@@ -47,11 +48,10 @@ export const IndexPageTemplate = ({
       borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid white'}}>
     </div>
     <div className="tint"></div>
-      <div className="container"> 
+      <div className="container" style={{zIndex:'10'}}> 
        <div className="columns section">       
           <div className="column is-8"
             style={{
-              zIndex: '10',
               lineHeight: '1',
               justifyContent: 'space-around',
               alignItems: 'left',
@@ -90,12 +90,13 @@ export const IndexPageTemplate = ({
               }}
             >
               <p style={{color:'black', fontSize:'120%', fontWeight:'bold', fontStyle: 'italic', marginBottom:'2rem'}}>  
-                一个整天装可怜的网络<span style={{ fontSize:'140%', color:'yellow'}}>乞丐</span>
+               全球网络乞讨者同盟创始人兼掌门人和唯一会员
               </p>
               <p> 三教合一的<span style={{ color:'purple'}}>修仙者</span></p> 
               <p>用<a href="https://code.visualstudio.com/" target="_blank" style={{color:'blue', textDecoration: 'underline'}}>Visual Studio Code</a>和手机写小说的全能
               <span style={{ color:'cyan'}}>程序员</span></p>
               <p>豪无实践经验的<span style={{ color:'orange'}}>政治家</span></p>
+              <p>自我诊断的重度躁郁症患者</p>
 
               <p style={{ color:'black', marginTop:'3rem', fontSize:'80%', fontStyle: 'italic'}}>
               请各位大爷施舍则个！！！十亿八亿不嫌多，一分两分不嫌少，咱要饭不嫌饭馊。
@@ -104,12 +105,14 @@ export const IndexPageTemplate = ({
             </h3>
             
           </div>
-          <div className="column is-4" style={{  zIndex: '10', }}>
-            <img
+          <div className="column is-4" style={{  }}>
+            <div style={{ maxWidth:'500px',margin:'auto' }}>
+              <img
                   src={QRCodeImg}
                   alt=""
                   style={{  }}
-            /> 
+              /> 
+            </div>
           </div>
         </div>
       </div>
@@ -134,7 +137,7 @@ export const IndexPageTemplate = ({
                 </div>
               </div>
               <div className="column is-8">
-                <div style={{marginLeft:'3rem', fontSize:'140%'}}>
+                <div style={{marginLeft:'.5rem', fontSize:'140%'}}>
                   {intro.reasons.map((reason) => (
                     <p>
                       <span className="icon" style={{verticalAlign: 'middle', color: 'green'}}> 

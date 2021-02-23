@@ -1,12 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: 'GPlates',
+    title: 'Mr.Q',
     description:
-      'This is the GPlates project website.',
+      'This is Mr.Q\'s website.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        indentedSyntax: true
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
