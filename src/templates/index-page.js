@@ -10,10 +10,9 @@ import Content, { HTMLContent } from '../components/Content'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faClipboard, faCheckCircle ,faStar} from '@fortawesome/free-solid-svg-icons'
 
-import GPlatesMainScreenshot from '../img/SATL_ExponentialStretching_650x380.png'
 import QRCodeImg from '../img/mm_facetoface_collect_qrcode_1600503554936.png'
 import logo from '../img/logo.svg'
-import gIcon from '../img/icon.svg'
+import nameLogo from '../img/name-logo.png'
 import pygplatesLogo from '../img/sunflower.jpg' 
 import portalScreenshot from '../img/sunflower.jpg'
 import gwsScreenshot from '../img/sunflower.jpg'
@@ -36,7 +35,7 @@ export const IndexPageTemplate = ({
         backgroundImage: `url(${
           !!image.childImageSharp ? image.childImageSharp.fluid.src : image
         })`,
-        backgroundPosition: `left top`,
+        backgroundPosition: `center`,
         backgroundAttachment: 'fixed',
         textAlign: `center`,
         //minHeight: `700px`,
@@ -44,76 +43,14 @@ export const IndexPageTemplate = ({
         position: 'relative'
       }}
     >
-    <div className="gp-hidden-ctl" style={{position: 'absolute', top:'0', height:'0', width:'0', zIndex:'100', 
-      borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid white'}}>
-    </div>
-    <div className="tint"></div>
-      <div className="container" style={{zIndex:'10'}}> 
-       <div className="columns section">       
-          <div className="column is-8"
-            style={{
-              lineHeight: '1',
-              justifyContent: 'space-around',
-              alignItems: 'left',
-              paddingLeft: '1em',
-              paddingRight: '1em',
-              paddingBottom: '2em',
-            }}
-          >
-        
-            <h1
-              className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-              style={{
-                color: '#48c774',
-                lineHeight: '1',
-                padding: '0.25em',
-              }}
-            >
-              <span style={{fontSize:'150%'}}>
-                <span style={{color:'white'}}>玄</span>
-                <span style={{color:'white'}}>门</span>
-                <span style={{color:'red'}}>Q</span>
-                <span style={{color:'white'}}>生</span>
-                <span style={{color:'white'}}>梦</span>
-              </span>
-            </h1>
-            <h3
-              className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-              style={{
-                //display: 'none',
-                color: '#fff',
-                padding: '0.25em',
-                maxWidth: '768px',
-                lineHeight: '1.5',
-                margin: 'auto',
-                fontFamily: 'Open Sans Bold, sans-serif'
-              }}
-            >
-              <p style={{color:'black', fontSize:'120%', fontWeight:'bold', fontStyle: 'italic', marginBottom:'2rem'}}>  
-               全球网络乞讨者同盟创始人兼掌门人和唯一会员
-              </p>
-              <p> 三教合一的<span style={{ color:'purple'}}>修仙者</span></p> 
-              <p>用<a href="https://code.visualstudio.com/" target="_blank" style={{color:'blue', textDecoration: 'underline'}}>Visual Studio Code</a>和手机写小说的全能
-              <span style={{ color:'cyan'}}>程序员</span></p>
-              <p>豪无实践经验的<span style={{ color:'orange'}}>政治家</span></p>
-              <p>自我诊断的重度躁郁症患者</p>
-
-              <p style={{ color:'black', marginTop:'3rem', fontSize:'80%', fontStyle: 'italic'}}>
-              请各位大爷施舍则个！！！十亿八亿不嫌多，一分两分不嫌少，咱要饭不嫌饭馊。
-              另外还可以兼职国家元首，请神送仙，占卜算命，武王伐纣，一统中华之类的杂活儿。
-              </p>
-            </h3>
-            
-          </div>
-          <div className="column is-4" style={{  }}>
-            <div style={{ maxWidth:'500px',margin:'auto' }}>
-              <img
-                  src={QRCodeImg}
-                  alt=""
-                  style={{  }}
-              /> 
-            </div>
-          </div>
+      <div className="gp-hidden-ctl" style={{position: 'absolute', top:'0', height:'0', width:'0', zIndex:'100', 
+        borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid white'}}>
+      </div>
+      <div className="tint">
+      </div>
+      <div className="container middle-content" style={{zIndex:'10'}}> 
+        <div className="columns section ">       
+          <a href="/news" style={{ margin:'auto'}}><img src={nameLogo} alt="nameLogo"  /></a>
         </div>
       </div>
     </div>

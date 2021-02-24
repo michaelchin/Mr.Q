@@ -210,15 +210,6 @@ $menu-label-color: $white-ter
   transform: translate(-50%, -50%)
   text-align: center
 
--webkit-scrollbar 
-  display: none
-
-body
-  -ms-overflow-style: none  
-
-body
-  scrollbar-width: none 
-
 .mc-hr 
   height: 2px
 
@@ -248,24 +239,32 @@ body
   transition: 1.5s ease
   -webkit-transition: 5.5s ease
   -ms-transition: 5.5s ease
-  -webkit-animation: glow linear 10s infinite
-  animation: glow linear 10s infinite
+  -webkit-animation: glow linear 30s infinite
+  animation: glow linear 30s infinite
   @-webkit-keyframes glow  
     0%
       background: rgba(100, 100, 200, 0.95)
+    25%
+      background: rgba(100, 200, 200, 0.80)
     50%
-      background: rgba(100, 100, 200, 0.90)
+      background: rgba(200, 200, 200, 0.90)
+    75%
+      background: rgba(200, 100, 200, 0.90)
     100%
       background: rgba(100, 100, 200, 0.95)    
   @keyframes glow
     0%
       background: rgba(100, 100, 200, 0.95)
+    25%
+      background: rgba(100, 200, 200, 0.80)
     50%
-      background: rgba(100, 100, 200, 0.90)
+      background: rgba(200, 200, 200, 0.90)
+    75%
+      background: rgba(200, 100, 200, 0.90)
     100%
-      background: rgba(100, 100, 200, 0.95)
+      background: rgba(100, 100, 200, 0.95)   
 
-.gp-middle-icon:hover
+.middle-content:hover
   animation: shake 2s cubic-bezier(.36,.07,.19,.97) both
   transform: translate3d(0, 0, 0)
   backface-visibility: hidden
@@ -277,21 +276,23 @@ body
       transform: translate3d(0, -20px, 0)
     100% 
       transform: translate3d(0, -1000px, 0)
-  
-.gp-header:after
-  display: block
-  content: ""
-  position: absolute
-  right: 0
-  bottom: 0
-  left: 0
-  z-index: 100
-  padding-bottom: 2.7vw
-  background-image: url(/img/curve.svg)
-  background-position-x: center
-  background-size: 110vw
+
+.middle-content 
+  opacity: 1
+  -webkit-transition: opacity 5.5s ease-in-out;
+  -moz-transition: opacity 5.5s ease-in-out;
+  -ms-transition: opacity 5.5s ease-in-out;
+  -o-transition: opacity 5.5s ease-in-out;
 
 .gp-hidden-ctl:hover + .tint
   bottom: 100%
   height: 0
   //cursor: pointer
+
+.gp-hidden-ctl:hover ~ .middle-content
+  opacity: 0
+
+html, body 
+    margin: 0 
+    height: 100% 
+    overflow: hidden
