@@ -13,9 +13,38 @@ import { faDownload, faClipboard, faCheckCircle ,faStar} from '@fortawesome/free
 import QRCodeImg from '../img/mm_facetoface_collect_qrcode_1600503554936.png'
 import logo from '../img/logo.svg'
 import nameLogo from '../img/name-logo.png'
+import qxd from '../img/qxd.png'
+import nanYangZhiNan from '../img/nan_yang_zhi_nan.png'
+import qingShanYiYu from '../img/qing_shan_yi_yu.png'
 import pygplatesLogo from '../img/sunflower.jpg' 
 import portalScreenshot from '../img/sunflower.jpg'
 import gwsScreenshot from '../img/sunflower.jpg'
+
+function drag_start(event) {
+    event.stopPropagation();
+    event.dataTransfer.setData("text/plain", event.clientX + ',' + event.clientY);
+} 
+function drag_over(event) { 
+    event.preventDefault(); 
+    return false; 
+} 
+function drop(event) { 
+    var offset = event.dataTransfer.getData("text/plain").split(',');
+    
+    var dm = document.getElementById('qingShanYiYu');
+    if(!dm.style.left){
+      dm.style.left=0;
+    }
+    if(!dm.style.top){
+      dm.style.top=0;
+    }
+    console.log(dm.style.left)
+    dm.style.left = parseInt(dm.style.left) + (event.clientX - parseInt(offset[0],10)) + 'px';
+    dm.style.top = parseInt(dm.style.top) + (event.clientY - parseInt(offset[1],10)) + 'px';
+    
+    event.preventDefault();
+    return false;
+} 
 
 
 export const IndexPageTemplate = ({
@@ -42,6 +71,8 @@ export const IndexPageTemplate = ({
         height: '100vh',
         position: 'relative'
       }}
+      onDrop={drop} 
+      onDragOver={drag_over}
     >
       <div className="gp-hidden-ctl" style={{position: 'absolute', top:'0', height:'0', width:'0', zIndex:'100', 
         borderLeft: '5px solid transparent', borderRight: '5px solid transparent', borderTop: '5px solid white'}}>
@@ -52,6 +83,15 @@ export const IndexPageTemplate = ({
         <div className="columns section ">       
           <a href="/news" style={{ margin:'auto'}}><img src={nameLogo} alt="nameLogo"  /></a>
         </div>
+      </div>
+      <div className="qingShanYiYu" id="qingShanYiYu" draggable="true" onDragStart={drag_start} >
+        <a href="/news" style={{ margin:'auto'}}><img src={qingShanYiYu} alt="qingShanYiYu" /></a>
+      </div>
+      <div className="nanYangZhiNan">
+        <img src={nanYangZhiNan} alt="nanYangZhiNan" />
+      </div>
+      <div className="qxd">
+        <img src={qxd} alt="qxd" />
       </div>
     </div>
 
@@ -68,8 +108,8 @@ export const IndexPageTemplate = ({
                   <iframe style={{
                     position: 'absolute',left:'0px', top:'0px'
                     }} 
-                    width="100%" height="100%" src="https://www.youtube.com/embed/KkYOTa-6MBU?autoplay=1&;mute=1&;loop=1&;rel=0&;showinfo=0&color=white&iv_load_policy=3&playlist=KkYOTa-6MBU" frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    width="100%" height="100%" src="https://www.youtube.com/embed/KkYOTa-6MBU?autoplay=1&;mute=1&;loop=1&;rel=0&;showinfo=0&color=white&iv_load_policy=3&playlist=KkYOTa-6MBU" frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
                 </iframe>
                 </div>
               </div>

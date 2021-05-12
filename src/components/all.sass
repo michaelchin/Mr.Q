@@ -264,18 +264,37 @@ $menu-label-color: $white-ter
     100%
       background: rgba(100, 100, 200, 0.95)   
 
-.middle-content:hover
-  animation: shake 2s cubic-bezier(.36,.07,.19,.97) both
+.middle-content img:hover
+  animation: shake 0.5s
+  animation-iteration-count: infinite
   transform: translate3d(0, 0, 0)
   backface-visibility: hidden
   perspective: 1000px
-  cursor: wait
+  //cursor: wait
 
   @keyframes shake 
-    30% 
-      transform: translate3d(0, -20px, 0)
-    100% 
-      transform: translate3d(0, -1000px, 0)
+    0% 
+      transform: translate(1px, 1px) rotate(0deg)
+    10% 
+      transform: translate(-1px, -2px) rotate(-1deg)
+    20%  
+      transform: translate(-3px, 0px) rotate(1deg)
+    30%  
+      transform: translate(3px, 2px) rotate(0deg)
+    40%  
+      transform: translate(1px, -1px) rotate(1deg)
+    50%  
+      transform: translate(-1px, 2px) rotate(-1deg)
+    60%  
+      transform: translate(-3px, 1px) rotate(0deg)
+    70%  
+      transform: translate(3px, 1px) rotate(-1deg)
+    80%  
+      transform: translate(-1px, -1px) rotate(1deg)
+    90%  
+      transform: translate(1px, 2px) rotate(0deg)
+    100%  
+      transform: translate(1px, -2px) rotate(-1deg)
 
 .middle-content 
   opacity: 1
@@ -293,6 +312,24 @@ $menu-label-color: $white-ter
   opacity: 0
 
 html, body 
-    margin: 0 
-    height: 100% 
-    overflow: hidden
+  margin: 0 
+  height: 100% 
+  overflow: hidden
+
+.qingShanYiYu
+  position: absolute
+  top: 30px
+  left: 30px
+  z-index: 10
+
+.qxd
+  position: absolute
+  top: 30px
+  right: 30px
+  z-index: 10
+
+.nanYangZhiNan
+  position: absolute
+  bottom: 30px
+  left: 30px
+  z-index: 10
