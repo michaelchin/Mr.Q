@@ -22,25 +22,26 @@ import gwsScreenshot from '../img/sunflower.jpg'
 
 function drag_start(event) {
     event.stopPropagation();
-    event.dataTransfer.setData("text/plain", event.clientX + ',' + event.clientY);
+    console.log(event.currentTarget.id);
+    event.dataTransfer.setData("text/plain", event.clientX + ',' + event.clientY + ',' + event.currentTarget.id);
 } 
 function drag_over(event) { 
     event.preventDefault(); 
     return false; 
 } 
 function drop(event) { 
-    var offset = event.dataTransfer.getData("text/plain").split(',');
+    var e_data = event.dataTransfer.getData("text/plain").split(',');
     
-    var dm = document.getElementById('qingShanYiYu');
+    var dm = document.getElementById(e_data[2]);
     if(!dm.style.left){
-      dm.style.left=0;
+      //dm.style.left=0;
     }
     if(!dm.style.top){
-      dm.style.top=0;
+      //dm.style.top=0;
     }
-    console.log(dm.style.left)
-    dm.style.left = parseInt(dm.style.left) + (event.clientX - parseInt(offset[0],10)) + 'px';
-    dm.style.top = parseInt(dm.style.top) + (event.clientY - parseInt(offset[1],10)) + 'px';
+    console.log(dm.offsetLeft)
+    dm.style.left = parseInt(dm.offsetLeft) + (event.clientX - parseInt(e_data[0],10)) + 'px';
+    dm.style.top = parseInt(dm.offsetTop) + (event.clientY - parseInt(e_data[1],10)) + 'px';
     
     event.preventDefault();
     return false;
@@ -87,11 +88,11 @@ export const IndexPageTemplate = ({
       <div className="qingShanYiYu" id="qingShanYiYu" draggable="true" onDragStart={drag_start} >
         <a href="/news" style={{ margin:'auto'}}><img src={qingShanYiYu} alt="qingShanYiYu" /></a>
       </div>
-      <div className="nanYangZhiNan">
-        <img src={nanYangZhiNan} alt="nanYangZhiNan" />
+      <div className="nanYangZhiNan" id="nanYangZhiNan" draggable="true" onDragStart={drag_start}>
+        <a href="/news" style={{ margin:'auto'}}><img src={nanYangZhiNan} alt="nanYangZhiNan" /></a>
       </div>
-      <div className="qxd">
-        <img src={qxd} alt="qxd" />
+      <div className="qxd" id="qxd" draggable="true" onDragStart={drag_start}>
+        <a href="/news" style={{ margin:'auto'}}><img src={qxd} alt="qxd" /></a>
       </div>
     </div>
 
